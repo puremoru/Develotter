@@ -1,0 +1,15 @@
+current directory: /Users/e155745/Desktop/Creatter/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180201-22763-a881js.rb extconf.rb
+creating Makefile
+
+current directory: /Users/e155745/Desktop/Creatter/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/e155745/Desktop/Creatter/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/e155745/Desktop/Creatter/vendor/bundle/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20180201-22763-c66jaf
