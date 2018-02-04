@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -16,6 +17,15 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.idea/workspace.xml
 
-# Ignore Byebug command history file.
-.byebug_history
+
+/yarn-error.log
+/vendor
+
+/.byebug_history
+
+/.workspace
+/.workspace.xml
+
+.DS_Store
