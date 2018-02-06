@@ -112,6 +112,24 @@ body {
   height: 2.8em;
 }
 
+// .fade-in{
+//   transition: opacity 2.0s;
+//   -moz-transition: opacity 2.0s;
+//   -webkit-transition: opacity 2.0s;
+//   -o-transition: opacity 2.0s;
+// }
+
+.fade-up {
+  transition: opacity 0.7s;
+  -moz-transition: opacity 0.7s;
+  -webkit-transition: opacity 0.7s;
+  -o-transition: opacity 0.7s;
+  transition: transform 0.7s;
+  -moz-transition: transform 0.7s;
+  -webkit-transition: transform 0.7s;
+  -o-transition: transform 0.7s;
+}
+
 .my-sm-0{
   background-color: #66CCFF;
   color: white;
