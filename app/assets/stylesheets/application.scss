@@ -112,12 +112,12 @@ body {
   height: 2.8em;
 }
 
-// .fade-in{
-//   transition: opacity 2.0s;
-//   -moz-transition: opacity 2.0s;
-//   -webkit-transition: opacity 2.0s;
-//   -o-transition: opacity 2.0s;
-// }
+.fade-in{
+  transition: opacity 2.0s;
+  -moz-transition: opacity 2.0s;
+  -webkit-transition: opacity 2.0s;
+  -o-transition: opacity 2.0s;
+}
 
 .fade-up {
   transition: opacity 0.7s;
