@@ -23,7 +23,7 @@
 //         $('.fade-in').each(function(){
 //             var POS = $(this).offset().top;
 //             var scroll = $(window).scrollTop();
-//             var windowHeight = $(window).height(); 
+//             var windowHeight = $(window).height();
 //
 //             if (scroll > POS - windowHeight + windowHeight/3){
 //                 $(this).css("opacity","1" );
