@@ -5,13 +5,16 @@
 
 @import "bootstrap";
 
+
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
 }
 
-
+.header-divider{
+  color: black;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -135,14 +138,19 @@ body {
   color: white;
 }
 
-.jumbotron{
+#top-jumbotron{
   background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),url(/developer.jpg);
   background-size: cover;
   background-position: 30%;
   height: 50em;
+  h1{
+    margin-top: 2.7em;
+    color: white;
+    font-size: 5em;
+  }
 }
 
-.btn-success{
+#develotter-signin{
   margin-top: 2em;
   width: 16em;
 }
@@ -151,12 +159,6 @@ body {
   width: 16em;
   margin-top: 2.5em;
   background-color: #55acee;
-}
-
-h1{
-  margin-top: 2.7em;
-  color: white;
-  font-size: 5em;
 }
 
 .about-creatter{
@@ -168,7 +170,7 @@ h1{
   margin-top: 3em;
 }
 
-h3{
+.row .col-lg-4 h3{
   margin-top: 1.5em;
 }
 

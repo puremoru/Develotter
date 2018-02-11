@@ -12,6 +12,34 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
+      <a class="navbar-brand navbar-left" href="/"><span class="top-link"><img src = "/develotter.png" class="creatter-logo"></span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <img class="menu-icon" src="/menu-icon.png">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active index-link text-center">
+              <a class="nav-link navbar-right" href="/posts/index"><span class="top-link">サービス一覧</span> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active mypage-link text-center">
+              <a class="nav-link" href="#"><span class="top-link">マイページ</span></a>
+            </li>
+            <li class="nav-item active post-link text-center">
+              <a class="nav-link" href="/posts/new"><span class="top-link">投稿する</span></a>
+            </li>
+            <li class="nav-item active post-link text-center">
+              <a class="nav-link" href="#"><span class="top-link">お問い合わせ</span></a>
+            </li>
+            <li class="nav-item active post-link text-center">
+              <a class="nav-link" href="#"><span class="top-link">プライバシーポリシー</span></a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+    <hr class="header-divider">
+  </header>
 
   <body>
     <%= yield %>
