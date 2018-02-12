@@ -40,8 +40,12 @@
     </nav>
     <hr class="header-divider">
   </header>
-
   <body>
+    <% if flash[:notice] %>
+      <div class="notice">
+      <%= flash[:notice]%>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

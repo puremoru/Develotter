@@ -14,7 +14,11 @@ class PostsController < ApplicationController
                     about: params[:about],
                  strength: params[:strength])
     if @post.save
-      redirect_to("/")
+      flash[:notice] = "サービスを投稿しました"
+      redirect_to("/posts/index")
+    else
+      flash[:notice] = "サービス名と説明は必須入力です。説明は200字以内の制限があります。"
+      render("posts/new")
     end
   end
 end
