@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body{
+  background-color: #B0E0E6;
+}
+
 .form{
   margin-top: 2em;
 }
@@ -36,7 +40,7 @@ h1{
 
 .service{
   margin-top: 2em;
-  color: #00F9A9;
+  color: #696969;
 }
 
 .index-name{
@@ -63,7 +67,7 @@ h1{
   // border-radius: 10px;
   border-radius: 13px;
   border: solid black;
-  background-color: #E6FFE9;
+  background-color: white;
   height: 20%;
 }
 
