@@ -1,11 +1,11 @@
 <div class="form">
-<h1 class="text-center">サービス一覧</h1>
+<h1 id="index-h1" class="text-center">サービス一覧</h1>
 <% @posts.each do |post| %>
 <div class="container">
-<div class="card">
+<div class="post-card">
   <div class="card-block">
     <label class="index-name">サービス名:</label><%= post.name %><br>
-    <%= post.about %>
+    <div class="post-about"><%= post.about %></div>
   </div>
 </div>
 </div>

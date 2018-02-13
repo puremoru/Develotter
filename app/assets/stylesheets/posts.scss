@@ -16,6 +16,10 @@
   width: 60%;
 }
 
+input{
+  border: solid #808000;
+}
+
 h1{
   margin-top: 2em;
 }
@@ -36,11 +40,40 @@ h1{
 }
 
 .index-name{
-  color: #00F9A9;
+  // color: #00F9A9;
+  margin-left: 1em;
+  margin-top: 1em;
  }
 
 .must-input{
   margin-left: 1em;
   background-color: red;
   color: white;
+}
+
+#submit-button{
+  margin-top: 3em;
+}
+
+.post-card{
+  margin-bottom: 2em;
+}
+
+.card-block{
+  // border-radius: 10px;
+  border-radius: 13px;
+  border: solid black;
+  background-color: #E6FFE9;
+  height: 20%;
+}
+
+.post-about{
+  // margin-left: 1em;
+  // margin-right: 1em;
+  margin: 1em;
+}
+
+#index-h1{
+  margin-bottom: 1em;
+  font-family: sans-serif;
 }
