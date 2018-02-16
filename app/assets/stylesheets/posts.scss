@@ -68,13 +68,12 @@ h1{
   border-radius: 13px;
   border: solid black;
   background-color: white;
-  height: 20%;
+  height: auto;
 }
 
 .post-about{
-  // margin-left: 1em;
-  // margin-right: 1em;
-  margin: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 #index-h1{
@@ -95,4 +94,42 @@ input.form-control{
 textarea.form-control{
   border-radius: 13px;
   border: solid black;
+}
+
+.link-show{
+  text-align: right;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+// /posts/:id
+#post-show{
+  margin-top: 4.5em;
+}
+
+#name-show{
+  margin-top: 0.5em;
+}
+
+.show-url{
+  margin-left: 1em;
+}
+
+.show-about{
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.show-abouttext{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.show-strength{
+  margin-left: 1em;
+}
+
+.show-strengthtext{
+  margin-left: 1em;
+  margin-bottom: 1em;
 }

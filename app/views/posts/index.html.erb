@@ -6,6 +6,7 @@
   <div class="card-block">
     <label class="index-name">サービス名:</label><%= post.name %><br>
     <div class="post-about"><%= post.about %></div>
+    <div class="link-show"><%= link_to("詳しく見る", "/posts/#{post.id}") %></div>
   </div>
 </div>
 </div>

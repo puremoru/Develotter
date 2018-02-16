@@ -1,0 +1,15 @@
+<div class="form">
+<div class="container">
+<div class="post-card">
+  <div id="post-show" class="card-block">
+    <h1 id="name-show" class="text-center"><%= @post.name %></h1>
+    <h5 class="text-center"><span class="show-theme">#<%= @post.theme %></span></h5>
+    <label class="show-url"><span style="text-decoration: underline">URL</span>:</label><%= link_to("#{@post.url}","#{@post.url}") %><br>
+    <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
+    <div class="show-abouttext"><%= @post.about %></div><br>
+    <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>
+    <div class="show-strengthtext"><%= @post.strength %></div>
+  </div>
+</div>
+</div>
+</div>
