@@ -19,7 +19,9 @@ gem 'data-confirm-modal'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'thor', '0.19.1'
 
 group :development, :test do
   gem 'sqlite3'
