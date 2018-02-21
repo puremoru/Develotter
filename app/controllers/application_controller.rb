@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
+  before_action :current_user
 
   private
 
@@ -15,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     return if logged_in?
-    redirect_to root_path, alert: 'ログインしてください'
+    flash[:notice] = "ログインしてください"
+    redirect_to root_path
   end
 end

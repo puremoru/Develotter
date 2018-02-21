@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
+  before_action :authenticate, only: [:new, :create]
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
   def new
@@ -16,7 +19,8 @@ class PostsController < ApplicationController
                       url: params[:url],
                     theme: params[:theme],
                     about: params[:about],
-                 strength: params[:strength])
+                 strength: params[:strength],
+                  user_id: @current_user.id)
     if @post.save
       flash[:notice] = "サービスを投稿しました"
       redirect_to("/posts/index")
