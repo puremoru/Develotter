@@ -4,6 +4,8 @@
   <div id="post-show" class="card-block">
     <h1 id="name-show" class="text-center"><%= @post.name %></h1>
     <h5 class="text-center"><span class="show-theme">#<%= @post.theme %></span></h5>
+    <!-- <label class="user-name"><span style="text-decoration: underline">作成者</span>:</label><%= @user.nickname if @user %><br> -->
+    <img src="<%= "#{@post.user.image_url}" if @post.user %>" class="user-img"><span class="user-name">@<%= @post.user.nickname if @post.user %></span><br>
     <label class="show-url"><span style="text-decoration: underline">URL</span>:</label><%= link_to("#{@post.url}","#{@post.url}") %><br>
     <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
     <div class="show-abouttext"><%= @post.about %></div><br>

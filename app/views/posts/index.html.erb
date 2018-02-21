@@ -4,6 +4,8 @@
 <div class="container">
 <div class="post-card">
   <div class="card-block">
+    <img src="<%= "#{post.user.image_url}" if post.user %>" class="index-user-img">
+    <span class="index-user-name">@<%= post.user.nickname if post.user %></span><br>
     <label class="index-name">サービス名:</label><%= post.name %><br>
     <div class="post-about"><%= post.about %></div>
     <div class="link-show"><%= link_to("詳しく見る", "/posts/#{post.id}") %></div>
