@@ -29,12 +29,19 @@
             <li class="nav-item active post-link text-center">
               <a class="nav-link" href="/posts/new"><span class="top-link">投稿する</span></a>
             </li>
+            <% if session[:user_id] %>
             <li class="nav-item active post-link text-center">
+              <a class="nav-link logout-link" href="/logout"><span class="top-link">ログアウトする</span></a>
+            </li>
+            <% end %>
+
+            <!-- <li class="nav-item active post-link text-center">
               <a class="nav-link" href="#"><span class="top-link">お問い合わせ</span></a>
             </li>
             <li class="nav-item active post-link text-center">
               <a class="nav-link" href="#"><span class="top-link">プライバシーポリシー</span></a>
-            </li>
+            </li> -->
+
             <!-- <li class="nav-item active post-link text-center">
               <a class="nav-link" href="#"><span class="top-link"><%= @user.nickname if @user %></span></a>
             </li> -->
