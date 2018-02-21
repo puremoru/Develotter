@@ -1,9 +1,11 @@
     <div id="top-jumbotron"class="jumbotron text-center">
       <h1>Develotter</h1>
       <p class="about-creatter">作ったサービスでつながる開発者のためのSNS</p>
+      <% if session[:user_id] == nil %>
       <p><a class="btn btn-info btn-lg" href="/auth/twitter" role="button">Twitterで新規登録/ログインする</a></p>
-      <p><a id="develotter-signin"class="btn btn-success btn-lg" href="#" role="button">Develotterで新規登録する</a></p>
-      <u><a href="#">ログインする</a></u>
+      <% end %>
+      <!-- <p><a id="develotter-signin"class="btn btn-success btn-lg" href="#" role="button">Develotterで新規登録する</a></p>
+      <u><a href="#">ログインする</a></u> -->
     </div>
 
 
@@ -34,20 +36,23 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
-
+      <% if session[:user_id] == nil %>
       <hr class="featurette-divider">
 
       <div class="container marketing text-center fade-in">
         <u><h2>今すぐ始める</h2></u>
-        <p>Twitterと連動させることで、意見やアドバイスを多くもらいやすくなります。</p>
+        <p>Twitterにも投稿することで、意見やアドバイスを多くもらいやすくなります。</p>
         <p><a class="btn btn-info now" href="#" role="button">Twitterで新規登録/ログイン</a></p>
-        <p><a class="btn btn-success now" href="#" role="button">Develotterで新規登録</a></p>
+        <!-- <p><a class="btn btn-success now" href="#" role="button">Develotterで新規登録</a></p> -->
       </div>
+      <% end %>
+
       <hr class="featurette-divider">
 
       <footer>
         <p>&copy; 2018 Develotter ALL RIGHTS RESERVED. created by <a href="https://twitter.com/puremoru0315">@puremoru0315</a><br>
            &middot; <a href="#">プライバシーポリシー</a>
+           &middot; <a href="#">お問い合わせ</a>
       </footer>
 
     </div><!-- /.container -->
