@@ -6,7 +6,9 @@
     <h5 class="text-center"><span class="show-theme">#<%= @post.theme %></span></h5>
     <!-- <label class="user-name"><span style="text-decoration: underline">作成者</span>:</label><%= @user.nickname if @user %><br> -->
     <img src="<%= "#{@post.user.image_url}" if @post.user %>" class="user-img">
-    <span class="user-name">@<%= @post.user.nickname if @post.user %></span><br>
+    <% if @post.user %>
+    <span class="user-name"><%= link_to(@post.user.nickname, "/users/#{@post.user.id}") %></span><br>
+    <% end %>
     <!-- <label class="show-url"><span style="text-decoration: underline">URL</span>:</label> -->
     <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br>
     <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>

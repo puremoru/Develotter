@@ -1,0 +1,44 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-user-name{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.index-user-img{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.user-content{
+  padding-bottom: 2em;
+  margin-left: 4.2em;
+  margin-right: 4.2em;
+}
+
+.show-user-image{
+  width: 3em;
+  border-radius: 3em;
+  border: solid black;
+}
+
+.user-divide{
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.user-service{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+button.btn-primary {
+  margin-left: 45%;
+}
+
+.index-content{
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}

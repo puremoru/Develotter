@@ -1,0 +1,16 @@
+<div class="form">
+  <h1 id="index-h1" class="text-center">ユーザーリスト</h1>
+  <% @users.each do |user| %>
+    <div class="container">
+      <div class="post-card">
+        <div class="card-block">
+        <img src="<%= "#{user.image_url}" %>" class="index-user-img">
+        <% if user %>
+          <span class="index-user-name"><%= link_to(user.nickname, "/users/#{user.id}")%></span><br>
+          <div class="index-content"><%= user.content %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>

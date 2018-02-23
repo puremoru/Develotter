@@ -11,4 +11,8 @@ class User < ApplicationRecord
       user.image_url = image_url
     end
   end
+
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end
