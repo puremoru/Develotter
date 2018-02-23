@@ -1,12 +1,14 @@
 <div class="form">
-  <h1 id="index-h1" class="text-center"><%= @user.nickname %>
-  <img class="show-user-image" src="<%= @user.image_url %>">
+  <h1 id="index-h1" class="text-center">
+    <img class="show-user-image" src="<%= @user.image_url %>">
+    <%= @user.nickname %>
   </h1>
   <h5 class="user-content"><%= @user.content %></h5>
   <!-- <%= link_to("プロフィールを編集する", "/users/#{@user.id}/edit", class: "text-center")%> -->
   <% if @current_user %>
     <% if @user.id == @current_user.id %>
-      <a href="<%= "/users/#{@user.id}/edit"%>"><button type="button" class="btn btn-primary">編集する</button></a>
+      <div class="center-block"><a href="<%= "/users/#{@user.id}/edit"%>"><button type="button" class="btn btn-primary">編集する</button></a>
+      </div>
     <% end %>
   <% end %>
   <hr class= "user-divide">
