@@ -4,8 +4,10 @@
   </h1>
   <h5 class="user-content"><%= @user.content %></h5>
   <!-- <%= link_to("プロフィールを編集する", "/users/#{@user.id}/edit", class: "text-center")%> -->
-  <% if @user.id == @current_user.id %>
-    <a href="<%= "/users/#{@user.id}/edit"%>"><button type="button" class="btn btn-primary">編集する</button></a>
+  <% if @current_user %>
+    <% if @user.id == @current_user.id %>
+      <a href="<%= "/users/#{@user.id}/edit"%>"><button type="button" class="btn btn-primary">編集する</button></a>
+    <% end %>
   <% end %>
   <hr class= "user-divide">
   <h2 class="user-service text-center">開発したサービス</h2>
