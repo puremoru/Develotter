@@ -39,6 +39,11 @@
               <a class="nav-link logout-link" href="/logout"><span class="top-link">ログアウトする</span></a>
             </li>
           <% end %>
+          <% if current_user == nil %>
+          <li class="nav-item active post-link text-center">
+            <a class="nav-link logout-link" href="/auth/twitter"><span class="top-link">ログインする</span></a>
+          </li>
+          <% end %>
 
             <!-- <li class="nav-item active post-link text-center">
               <a class="nav-link" href="#"><span class="top-link">お問い合わせ</span></a>
