@@ -17,7 +17,12 @@
         <div class="show-strengthtext"><%= @post.strength %></div>
       </div>
     </div>
-    <%= render :partial => "comment_index" %>
-    <%= render :partial => "comment_form" %>
+      <% unless @post.comments.blank? %>
+        <%= render :partial => "comment_index" %>
+      <%end %>
+
+    <% if current_user %>
+      <%= render :partial => "comment_form" %>
+    <% end %>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate, only: [:new, :create, :comment_new, :comment_create]
+  before_action :authenticate, only: [:new, :create]
 
   def index
     @posts = Post.all.order(created_at: :desc)

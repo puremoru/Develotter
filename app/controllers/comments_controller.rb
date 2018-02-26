@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :current_post
+  before_action :authenticate
   def create
     @post = Post.find_by(id: params[:post_id])
     @comment = Comment.new(content: params[:content],
