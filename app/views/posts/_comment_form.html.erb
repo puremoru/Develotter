@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= form_tag("/posts/#{@post.id}/comments/create", method: :post) do%>
+    <label class="service" for="exampleTextarea">コメントを投稿する</label>
+  <!-- <div class="input-form"> -->
+    <textarea name="content" class="form-control" id="exampleTextarea" rows="5"></textarea>
+  <!-- </div> -->
+    <button type="button submit" id="submit-button" class="btn btn-success new-btn" value="投稿">投稿する
+    </button>
+  <% end %>
+</div>

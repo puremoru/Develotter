@@ -1,0 +1,14 @@
+<h3 class="text-center">コメント一覧</h3>
+<div class="comment-list">
+  <ul class="list-group">
+    <% @comments.each do |comment| %>
+      <li class="list-group-item">
+        <img class="comment-user-img" src="<%= "#{comment.user.image_url}" %>">
+        <%= link_to("#{comment.user.nickname}", "/users/#{comment.user.id}") %><br>
+        <div class="comment-text">
+          <%= comment.content%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
