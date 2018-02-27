@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#show'
 
   post '/posts/:post_id/comments/create', to: 'comments#create'
+  post '/posts/:post_id/likes/create', to: 'likes#create'
+  post '/posts/:post_id/likes/destroy', to: 'likes#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
