@@ -15,20 +15,7 @@
         <div class="show-abouttext"><%= @post.about %></div><br>
         <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>
         <div class="show-strengthtext"><%= @post.strength %></div>
-        <hr class="like-divide">
-        <div class="likes-form">
-          <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-            <div class="text-center">
-              <%= link_to image_tag("/like_red.png"), "/posts/#{@post.id}/likes/destroy", {method: "post"} %>
-              <span class="likes-count">いいね！<%= @post.likes.count %></span>
-            </div>
-          <% else %>
-            <div class="text-center">
-              <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
-              いいね！<%= @post.likes.count %>
-            </div>
-          <% end %>
-        </div>
+        <%= render :partial => "likes" %>
       </div>
       <% unless @post.comments.blank? %>
         <%= render :partial => "comment_index" %>

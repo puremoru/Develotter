@@ -1,0 +1,24 @@
+<% if current_user %>
+  <hr class="like-divide">
+  <div class="likes-form">
+    <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+      <div class="text-center">
+        <%= link_to image_tag("/like_red.png"), "/posts/#{@post.id}/likes/destroy", {method: "post"} %>
+        <span class="likes-count">いいね！<%= @post.likes.count %></span>
+      </div>
+    <% else %>
+      <div class="text-center">
+        <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
+        いいね！<%= @post.likes.count %>
+      </div>
+    <% end %>
+    <% else %>
+      <hr class="like-divide">
+      <div class="likes-form">
+        <div class="text-center">
+          <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
+          いいね！<%= @post.likes.count %>
+        </div>
+      </div>
+  <% end %>
+</div>
