@@ -4,12 +4,12 @@
     <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
       <div class="text-center">
         <%= link_to image_tag("/like_red.png"), "/posts/#{@post.id}/likes/destroy", {method: "post"} %>
-        <span class="likes-count">いいね！<%= @post.likes.count %></span>
+        <span class="likes-count"><%= @post.likes.count %>　いいね！</span>
       </div>
     <% else %>
       <div class="text-center">
         <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
-        いいね！<%= @post.likes.count %>
+        <%= @post.likes.count %>　いいね！
       </div>
     <% end %>
     <% else %>
