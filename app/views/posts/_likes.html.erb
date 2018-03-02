@@ -1,23 +1,31 @@
 <% if current_user %>
   <hr class="like-divide">
   <div class="likes-form">
-    <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
       <div class="text-center">
-        <%= link_to image_tag("/like_red.png"), "/posts/#{@post.id}/likes/destroy", {method: "post"} %>
-        <span class="likes-count"><%= @post.likes.count %>　いいね！</span>
+        <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+          <%= link_to image_tag("/like_red.png"), "/posts/#{@post.id}/likes/destroy", {method: "post"} %>
+          <span class="likes-count"><%= @post.likes.count %>　いいね！</span>
+        <% else %>
+          <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
+          <span class="likes-count-2"><%= @post.likes.count %>　いいね！</span>
+        <% end %>
+        <% if Star.find_by(user_id: current_user.id, post_id: @post.id) %>
+          <span class="star-img"><%= link_to image_tag("/star_yellow.png"), "/posts/#{@post.id}/stars/destroy", {method: "post"} %></span>
+          <span class="stars-count"><%= @post.stars.count %>　使いたい！</span>
+        <% else %>
+          <span class="star-img"><%= link_to image_tag("/star_white.png"), "/posts/#{@post.id}/stars/create", {method: "post"} %></span>
+          <%= @post.stars.count %>　使いたい！
+        <% end %>
       </div>
-    <% else %>
-      <div class="text-center">
-        <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
-        <%= @post.likes.count %>　いいね！
-      </div>
-    <% end %>
+
     <% else %>
       <hr class="like-divide">
       <div class="likes-form">
         <div class="text-center">
           <%= link_to image_tag("/like_white.png"), "/posts/#{@post.id}/likes/create", {method: "post"} %>
-          いいね！<%= @post.likes.count %>
+          <span class="likes-count-2">いいね！　<%= @post.likes.count %></span>
+          <span class="star-img"><%= link_to image_tag("/star_white.png"), "/posts/#{@post.id}/stars/create", {method: "post"} %></span>
+          使いたい！　<%= @post.stars.count %>
         </div>
       </div>
   <% end %>

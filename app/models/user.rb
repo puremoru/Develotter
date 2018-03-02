@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :stars, dependent: :destroy
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]

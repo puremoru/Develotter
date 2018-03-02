@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes
+  has_many :stars
   validates :name, {presence: true}
   validates :about, {presence: true, length: {maximum: 200}}
   # validates :user_id, {presence: true}
@@ -16,5 +17,9 @@ class Post < ApplicationRecord
 
   def likes
     return Like.where(post_id: self.id)
+  end
+
+  def stars
+    return Star.where(post_id: self.id)
   end
 end
