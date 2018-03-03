@@ -21,6 +21,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'google-analytics-rails'
 
 group :development, :test do
   gem 'sqlite3'

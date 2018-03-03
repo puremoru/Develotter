@@ -18,6 +18,7 @@
         enable_page_level_ads: true
       });
     </script>
+    <%= analytics_init if Rails.env.production? %>
   </head>
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
