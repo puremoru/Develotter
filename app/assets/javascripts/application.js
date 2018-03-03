@@ -74,38 +74,38 @@ $(window).on('load',function(){
             }
         });
     });
-    // $(function () {
-    //   $("#about-textarea").keyup(function(){
-    //     var counter = $(this).val().length;
-    //     $("#countUp").text(counter);
-    //
-    //     if(counter == 0){
-    //       $("#countUp").text("0");
-    //     }
-    //     if(counter >= 200){
-    //       $("#countUp").css("color","red");
-    //     } else {
-    //       $("#countUp").css("color","#666");
-    //     }
-    //   });
-    // });
-    $(function(){
-      var countMax = 200;
-      $('#about-textarea').bind('keydown keyup keypress change',function(){
-        var thisValueLength = $(this).val().length;
-        var countDown = (countMax)-(thisValueLength);
-        $('#countUp').html(countDown);
+    $(function () {
+      $("#about-textarea").keyup(function(){
+        var counter = $(this).val().length;
+        $("#countUp").text(counter);
 
-        if(countDown < 0){
-            $('#countUp').css({color:'#ff0000',fontWeight:'bold'});
+        if(counter == 0){
+          $("#countUp").text("0");
+        }
+        if(counter >= 200){
+          $("#countUp").css("color","red");
         } else {
-            $('#countUp').css({color:'#000000',fontWeight:'normal'});
+          $("#countUp").css("color","#666");
         }
       });
-    $(window).load(function(){
-        $('#countUp').html(countMax);
     });
-  });
+  //   $(function(){
+  //     var countMax = 200;
+  //     $('#about-textarea').bind('keydown keyup keypress change',function(){
+  //       var thisValueLength = $(this).val().length;
+  //       var countDown = (countMax)-(thisValueLength);
+  //       $('#countUp').html(countDown);
+  //
+  //       if(countDown < 0){
+  //           $('#countUp').css({color:'#ff0000',fontWeight:'bold'});
+  //       } else {
+  //           $('#countUp').css({color:'#000000',fontWeight:'normal'});
+  //       }
+  //     });
+  //   $(window).load(function(){
+  //       $('#countUp').html(countMax);
+  //   });
+  // });
 });
 
 // 文字数のカウント
