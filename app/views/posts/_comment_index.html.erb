@@ -8,6 +8,11 @@
         <div class="comment-text">
           <%= comment.content %>
         </div>
+        <% if current_user && comment.user_id == current_user.id %>
+          <div class="text-right">
+            <%= link_to( "コメントを削除する", "/posts/#{@post.id}/comments/#{comment.id}/destroy", method: :post )%>
+          </div>
+        <% end %>
       </li>
     <% end %>
   </ul>

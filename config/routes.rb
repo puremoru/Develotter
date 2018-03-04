@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#show'
   get '/posts/:id/edit', to: 'posts#edit'
   post '/posts/:id/update', to: 'posts#update'
-  post '/posts/:id/destroy', to: 'posts#destroy' 
+  post '/posts/:id/destroy', to: 'posts#destroy'
 
   post '/posts/:post_id/comments/create', to: 'comments#create'
+  post '/posts/:post_id/comments/:id/destroy', to: 'comments#destroy'
   post '/posts/:post_id/likes/create', to: 'likes#create'
   post '/posts/:post_id/likes/destroy', to: 'likes#destroy'
   post '/posts/:post_id/stars/create', to: 'stars#create'
