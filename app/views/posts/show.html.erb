@@ -16,7 +16,10 @@
         <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>
         <div class="show-strengthtext"><%= @post.strength %></div>
         <% if current_user && current_user.id == @post.user_id %>
-          <div class="edit-link text-right"><%= link_to("編集する","/posts/#{@post.id}/edit") %></div>
+          <div class="edit-link text-right">
+            <%= link_to("編集する","/posts/#{@post.id}/edit") %>
+            <span class="destroy-link"><%= link_to("削除する","/posts/#{@post.id}/destroy", method: :post) %></span>
+          </div>
         <% end %>
         <%= render :partial => "likes" %>
       </div>
