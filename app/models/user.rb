@@ -7,6 +7,7 @@ class User < ApplicationRecord
     uid = auth[:uid]
     nickname = auth[:info][:nickname]
     image_url = auth[:info][:image]
+    image_url = image_url.sub(/http/,'https')
 
     self.find_or_create_by(provider: provider, uid: uid) do |user|
       user.nickname = nickname
