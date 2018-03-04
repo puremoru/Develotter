@@ -12,9 +12,9 @@
     <!-- <label class="show-url"><span style="text-decoration: underline">URL</span>:</label> -->
         <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br>
         <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
-        <div class="show-abouttext"><%= @post.about %></div><br>
+        <div class="show-abouttext"><%= simple_format(@post.about) %></div><br>
         <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>
-        <div class="show-strengthtext"><%= @post.strength %></div>
+        <div class="show-strengthtext"><%= simple_format(@post.strength) %></div>
         <% if current_user && current_user.id == @post.user_id %>
           <div class="edit-link text-right">
             <%= link_to("編集する","/posts/#{@post.id}/edit") %>

@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :stars
   validates :name, {presence: true}
-  validates :about, {presence: true, length: {maximum: 200}}
+  validates :about, {presence: true}
   # validates :user_id, {presence: true}
 
   def user
