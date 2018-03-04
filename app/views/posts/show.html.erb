@@ -10,7 +10,12 @@
           <span class="user-name"><%= link_to(@post.user.nickname, "/users/#{@post.user.id}") %></span><br>
         <% end %>
     <!-- <label class="show-url"><span style="text-decoration: underline">URL</span>:</label> -->
-        <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br>
+        <% if @post.catchcopy %>
+          <h5 class="show-catchcopy">キャッチコピー:<%= @post.catchcopy %></h5>
+        <% end %>
+        <% unless @post.url.blank? %>
+          <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br>
+        <% end %>
         <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
         <div class="show-abouttext"><%= simple_format(@post.about) %></div><br>
         <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>

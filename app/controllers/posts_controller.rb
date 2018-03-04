@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(name: params[:name],
+                catchcopy: params[:catchcopy],
                       url: params[:url],
                     theme: params[:theme],
                     about: params[:about],
@@ -39,6 +40,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.name = params[:name]
+    @post.catchcopy = params[:catchcopy]
     @post.url = params[:url]
     @post.theme = params[:theme]
     @post.about = params[:about]
