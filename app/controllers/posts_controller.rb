@@ -23,6 +23,7 @@ class PostsController < ApplicationController
                     theme: params[:theme],
                     about: params[:about],
                  strength: params[:strength],
+                    stroy: params[:stroy],
                   user_id: @current_user.id)
     if @post.save
       flash[:notice] = "サービスを投稿しました"
@@ -45,6 +46,7 @@ class PostsController < ApplicationController
     @post.theme = params[:theme]
     @post.about = params[:about]
     @post.strength = params[:strength]
+    @post.stroy = params[:stroy]
     if @post.save
       flash[:notice] = "投稿を編集しました。"
       redirect_to("/posts/#{@post.id}")
