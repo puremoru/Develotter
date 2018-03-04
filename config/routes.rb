@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/users/:id/update', to: 'users#update'
 
   root 'home#top'
+  get '/privacy', to: 'home#privacy'
   get '/posts/new', to: 'posts#new'
   post '/posts/create', to: 'posts#create'
   get '/posts/index', to: 'posts#index'
