@@ -6,7 +6,7 @@
         <img class="comment-user-img" src="<%= "#{comment.user.image_url}" %>">
         <%= link_to("#{comment.user.nickname}", "/users/#{comment.user.id}") %><br>
         <div class="comment-text">
-          <%= comment.content %>
+          <%= simple_format(comment.content) %>
         </div>
         <% if current_user && comment.user_id == current_user.id %>
           <div class="text-right">
