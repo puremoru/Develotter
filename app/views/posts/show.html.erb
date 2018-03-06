@@ -30,6 +30,17 @@
         <% end %>
         <%= render :partial => "likes" %>
       </div>
+      <!-- <a href="http://twitter.com/share?tag=Develotter">Twitter</a> -->
+      <% if current_user && current_user.id == @post.user_id %>
+        <font size="4">Twitterにも投稿する</font>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="サービス作ってみました！<%=@post.name%>" class="twitter-share-button" data-hashtags="Develotter" data-lang="ja" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <% else %>
+        <font size="4">このサービスをシェアする</font>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-text="このサービス面白い！<%=@post.name%>" class="twitter-share-button" data-hashtags="Develotter" data-lang="ja" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <% end %>
+
       <% unless @post.comments.blank? %>
         <%= render :partial => "comment_index" %>
       <%end %>
