@@ -18,7 +18,7 @@
 !/log/.keep
 !/tmp/.keep
 .idea/workspace.xml
-
+/public/post_images
 
 /yarn-error.log
 /vendor
