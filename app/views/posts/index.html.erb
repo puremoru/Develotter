@@ -17,6 +17,10 @@
           <% end %>
         </div>
         <div class="link-show"><%= link_to("詳しく見る", "/posts/#{post.id}") %></div>
+        <div class="text-center show-comment">
+        <img src="/comment.png">
+        <%= post.comments.count %>
+      </div>
       </div>
     </div>
   </div>
