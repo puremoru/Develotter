@@ -22,6 +22,11 @@
         <div class="show-strengthtext"><%= simple_format(@post.strength) %></div>
         <label class="show-strength"><span style="text-decoration: underline">完成までのストーリーや開発手段</span>:</label>
         <div class="show-strengthtext"><%= simple_format(@post.stroy) %></div>
+        <% if @post.img_name %>
+          <div class="text-center">
+            <img class="service-image" src="<%= "/post_images/#{@post.img_name}" %>">
+          </div>
+        <% end %>
         <% if current_user && current_user.id == @post.user_id %>
           <div class="edit-link text-right">
             <%= link_to("編集する","/posts/#{@post.id}/edit") %>

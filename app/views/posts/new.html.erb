@@ -1,51 +1,55 @@
 <div class="container">
   <div class=" form text-center">
     <h1 class="service-post">サービスを投稿する</h1>
-      <%= form_tag("/posts/create", method: :post) do %>
+      <%= form_tag("/posts/create", {multipart: true}) do %>
         <div class="form-group">
           <label class="service" for="exampleInputEmail1">サービス名<span class="must-input">必須</span></label>
           <div class="input-form"><input name="name" value="<%= @post.name %>"class="form-control" id="exampleInputEmail1">
           </div>
     <!-- </div> -->
-    <label class="service" for="exampleInputEmail1">キャッチコピー</label>
-    <div class="input-form"><input name="catchcopy" value="<%= @post.catchcopy %>"class="form-control" id="exampleInputEmail1">
-    </div>
+          <label class="service" for="exampleInputEmail1">キャッチコピー</label>
+          <div class="input-form"><input name="catchcopy" value="<%= @post.catchcopy %>"class="form-control" id="exampleInputEmail1">
+          </div>
 
     <!-- <div class="form-group"> -->
-      <label class="service" for="exampleInputEmail1">サービスのURL</label>
-      <div class="input-form"><input name="url" value="<%= @post.url %>"class="form-control" id="exampleInputEmail1" placeholder="例)https://develotter.net">
-      </div>
-      <small id="emailHelp" class="form-text text-muted">*)ネイティブアプリであればApp StoreやGoogle Playのリンク
-      </small>
+          <label class="service" for="exampleInputEmail1">サービスのURL</label>
+          <div class="input-form"><input name="url" value="<%= @post.url %>"class="form-control" id="exampleInputEmail1" placeholder="例)https://develotter.net">
+          </div>
+          <small id="emailHelp" class="form-text text-muted">*)ネイティブアプリであればApp StoreやGoogle Playのリンク
+          </small>
     <!-- </div> -->
 
     <!-- <div class="form-group"> -->
-      <label class="service" for="exampleInputEmail1">サービスのテーマ</label>
-      <div class="input-form">
-        <input name="theme" value="<%= @post.theme %>" class="form-control" id="exampleInputEmail1" placeholder="例)教育, グルメ, 恋愛など"><%= @post.theme %>
-      </div>
+          <label class="service" for="exampleInputEmail1">サービスのテーマ</label>
+          <div class="input-form">
+            <input name="theme" value="<%= @post.theme %>" class="form-control" id="exampleInputEmail1" placeholder="例)教育, グルメ, 恋愛など"><%= @post.theme %>
+          </div>
+
+          <label class="service" for="exampleInputEmail1">サービスのアピール画像</label>
+          <div class="input-form">
+            <input name="image" type="file">
+          </div>
+    <!-- </div> -->
+    <!-- <div class="form-group"> -->
+          <label class="service" for="exampleTextarea">サービスの説明<span class="must-input">必須</span></label>
+          <div class="input-form">
+            <textarea name="about" class="form-control" id="about-textarea" rows="5"><%= @post.about %></textarea>
+          </div>
     <!-- </div> -->
 
     <!-- <div class="form-group"> -->
-      <label class="service" for="exampleTextarea">サービスの説明<span class="must-input">必須</span></label>
-      <div class="input-form">
-        <textarea name="about" class="form-control" id="about-textarea" rows="5"><%= @post.about %></textarea>
-      </div>
+          <label class="service" for="exampleTextarea">こだわった点やコメント</label>
+          <div class="input-form"><textarea name="strength" class="form-control" id="exampleTextarea" rows="5" placeholder="例)UXや仕組みを作る上で工夫したことなど"><%= @post.strength %></textarea></div>
     <!-- </div> -->
-
-    <!-- <div class="form-group"> -->
-      <label class="service" for="exampleTextarea">こだわった点やコメント</label>
-      <div class="input-form"><textarea name="strength" class="form-control" id="exampleTextarea" rows="5" placeholder="例)UXや仕組みを作る上で工夫したことなど"><%= @post.strength %></textarea></div>
-    <!-- </div> -->
-    <label class="service" for="exampleTextarea">完成までのストーリーや開発手段</label>
-    <div class="input-form"><textarea name="stroy" class="form-control" id="exampleTextarea" rows="5" placeholder="例)どうしてこれを作ろうと思ったのか、開発までどのように学習したかなど"><%= @post.stroy %></textarea></div>
+          <label class="service" for="exampleTextarea">完成までのストーリーや開発手段</label>
+          <div class="input-form"><textarea name="stroy" class="form-control" id="exampleTextarea" rows="5" placeholder="例)どうしてこれを作ろうと思ったのか、開発までどのように学習したかなど"><%= @post.stroy %></textarea></div>
     <!-- <input type="submit" value="投稿する" class="btn btn-success new-btn"> -->
-      <button type="button submit" id="submit-button" class="btn btn-success new-btn" value="投稿">投稿する
-      </button>
-      </div>
-    <% end %>
+          <button type="button submit" id="submit-button" class="btn btn-success new-btn" value="投稿">投稿する
+          </button>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 <!-- <form>
 <%= form_tag("/posts/create") do %>
 <input name="name">

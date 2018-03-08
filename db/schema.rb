@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304123946) do
+ActiveRecord::Schema.define(version: 20180308101041) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180304123946) do
     t.integer "user_id"
     t.string "catchcopy"
     t.text "stroy"
+    t.string "img_name"
   end
 
   create_table "stars", force: :cascade do |t|

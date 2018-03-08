@@ -11,6 +11,11 @@
         <% end %>
         <label class="index-name">サービス名:</label><%= post.name %><br>
         <div class="post-about"><%= simple_format(post.about) %></div>
+        <div class="text-center">
+          <% if post.img_name %>
+            <img class="service-image" src="<%= "/post_images/#{post.img_name}" %>">
+          <% end %>
+        </div>
         <div class="link-show"><%= link_to("詳しく見る", "/posts/#{post.id}") %></div>
       </div>
     </div>
