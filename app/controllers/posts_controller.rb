@@ -31,7 +31,7 @@ class PostsController < ApplicationController
       image = params[:image]
       File.binwrite("public/post_images/#{@post.img_name}", image.read)
     end
-    
+
     if @post.save
       flash[:notice] = "サービスを投稿しました"
       redirect_to("/posts/index")
@@ -76,6 +76,10 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿を削除しました。"
       redirect_to("/posts/index")
     end
+  end
+
+  def trend
+    @posts = Post.all
   end
 
   def ensure_correct_user

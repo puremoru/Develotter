@@ -1,5 +1,5 @@
 <div class="form">
-<h1 id="index-h1" class="text-center">サービス一覧</h1>
+<h1 id="index-h1" class="text-center">人気サービス</h1>
 <% @posts.each do |post| %>
   <div class="container">
     <div class="post-card">
@@ -18,12 +18,8 @@
         </div> -->
         <div class="link-show"><%= link_to("詳しく見る", "/posts/#{post.id}") %></div>
         <div class="text-center show-comment">
-        <img class="likes-icon" src="/like_red.png">
-        <span class="likes-count-index">いいね！:<%= post.likes.count %>件</span>
-        <img class="stars-icon" src="/star_yellow.png">
-        <span class="stars-count-index">使いたい！:<%= post.stars.count %>件</span>
-        <img class="comment-icon" src="/comment.png">
-        <span class="comments-count-index"><%= post.comments.count %></span>
+        <img src="/comment.png">
+        <%= post.comments.count %>
       </div>
       </div>
     </div>
