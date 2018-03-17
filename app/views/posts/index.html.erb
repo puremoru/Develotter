@@ -9,8 +9,10 @@
         <% if post.user %>
           <span class="index-user-name"><%= link_to(post.user.nickname, "/users/#{post.user.id}")%></span><br>
         <% end %>
-        <label class="index-name">サービス名:</label><%= post.name %><br>
-        <div class="post-about"><%= simple_format(post.about) %></div>
+        <div class="text-center">
+          <label class="index-name"></label><span class="index-post-name"><h1><%= post.name %></h1></span><br>
+          <div class="post-about"><%= simple_format(post.about) %></div>
+        </div>
         <!-- <div class="text-center">
           <% if post.img_name %>
             <img class="service-image" src="<%= "/post_images/#{post.img_name}" %>">

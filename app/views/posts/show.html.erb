@@ -14,7 +14,11 @@
           <h5 class="show-catchcopy">キャッチコピー:<%= @post.catchcopy %></h5>
         <% end %>
         <% unless @post.url.blank? %>
-          <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br>
+          <!-- <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br> -->
+          <!-- <button type="button" class="btn btn-primary">
+            <a href="<%= @post.url %>">このサービスを使ってみる!</a>
+          </button><br> -->
+          <a href="<%= @post.url %>"><button type="button" class="btn btn-primary use-btn">このサービスを使ってみる</button></a><br>
         <% end %>
         <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
         <div class="show-abouttext"><%= simple_format(@post.about) %></div><br>
