@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate, only: [:new, :create, :edit, :update]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  include ScrapingImg
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -26,10 +27,17 @@ class PostsController < ApplicationController
                     stroy: params[:stroy],
                   user_id: @current_user.id)
 
-    if params[:image]
-      @post.img_name = "#{@post.name}.jpg"
-      image = params[:image]
-      File.binwrite("public/post_images/#{@post.img_name}", image.read)
+    # if params[:image]
+    #   @post.img_name = "#{@post.name}.jpg"
+    #   image = params[:image]
+    #   File.binwrite("public/post_images/#{@post.img_name}", image.read)
+    # end
+
+    if params[:url]
+      tmp = scrape_img(params[:url])
+      if File.extname(tmp) =~ /.*\.png/i || File.extname(tmp) =~ /.*\.jpg/i  || File.extname(tmp) =~ /.*\.jpeg/i
+        @post.img_url = tmp
+      end
     end
 
     if @post.save
@@ -55,10 +63,11 @@ class PostsController < ApplicationController
     @post.strength = params[:strength]
     @post.stroy = params[:stroy]
 
-    if params[:image]
-      @post.img_name = "#{@post.name}.jpg"
-      image = params[:image]
-      File.binwrite("public/post_images/#{@post.img_name}", image.read)
+    if params[:url]
+      tmp = scrape_img(params[:url])
+      if File.extname(tmp) =~ /.*\.png/i || File.extname(tmp) =~ /.*\.jpg/i  || File.extname(tmp) =~ /.*\.jpeg/i
+        @post.img_url = tmp
+      end
     end
 
     if @post.save

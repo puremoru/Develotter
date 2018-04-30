@@ -24,6 +24,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'google-analytics-rails'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'metainspector'
 
 group :development, :test do
   gem 'sqlite3'

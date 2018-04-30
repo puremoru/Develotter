@@ -11,6 +11,11 @@
         <% end %>
         <div class="text-center">
           <label class="index-name"></label><span class="index-post-name"><h1><%= post.name %></h1></span><br>
+          <% if post.img_url %>
+            <% if File.extname(post.img_url) =~ /.*\.png/i || File.extname(post.img_url) =~ /.*\.jpg/i  || File.extname(post.img_url) =~ /.*\.jpeg/i%>
+              <img class="eyecatch-img" src="<%= post.img_url %>">
+            <% end %>
+          <% end %>
         </div>
         <div class="post-about"><%= simple_format(post.about) %></div>
         <!-- <div class="text-center">
