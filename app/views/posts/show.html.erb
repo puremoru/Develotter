@@ -10,7 +10,7 @@
           <% end %>
         </div>
         <div class="text-center">
-          <a class="btn btn-primary text-center" href="<%= @post.url %>">サービスを見る</a>
+          <a class="btn btn-primary text-center use-btn" href="<%= @post.url %>">サービスを見る</a>
         </div>
         <img src="<%= "#{@post.user.image_url}" if @post.user %>" class="user-img">
         <% if @post.user %>
