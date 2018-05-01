@@ -3,7 +3,7 @@
     <div class="post-card">
       <div id="post-show" class="card-block">
         <h1 id="name-show" class="text-center"><%= @post.name %></h1>
-        <h5 class="text-center"><span class="show-theme"><%= @post.catchcopy unless @post.catchcopy.blank? %></span></h5>
+        <h5 class="text-center"><span style="color: "#C0C0C0""class="show-theme"><%= @post.catchcopy unless @post.catchcopy.blank? %></span></h5>
         <div class="text-center">
           <% if @post.img_url %>
             <img class="eyecatch-img-show" src="<%= @post.img_url if @post.img_url %>">
