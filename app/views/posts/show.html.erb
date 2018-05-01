@@ -3,28 +3,23 @@
     <div class="post-card">
       <div id="post-show" class="card-block">
         <h1 id="name-show" class="text-center"><%= @post.name %></h1>
-        <h5 class="text-center"><span class="show-theme">#<%= @post.theme %></span></h5>
-    <!-- <label class="user-name"><span style="text-decoration: underline">作成者</span>:</label><%= @user.nickname if @user %><br> -->
+        <h5 class="text-center"><span class="show-theme"><%= @post.catchcopy unless @post.catchcopy.blank? %></span></h5>
+        <div class="text-center">
+          <img class="eyecatch-img-show" src="<%= @post.img_url if @post.img_url %>">
+        </div>
+        <div class="text-center">
+          <a class="btn btn-primary text-center" href="<%= @post.url %>">サービスを見る</a>
+        </div>
         <img src="<%= "#{@post.user.image_url}" if @post.user %>" class="user-img">
         <% if @post.user %>
           <span class="user-name"><%= link_to(@post.user.nickname, "/users/#{@post.user.id}") %></span><br>
         <% end %>
-    <!-- <label class="show-url"><span style="text-decoration: underline">URL</span>:</label> -->
-        <% unless @post.catchcopy.blank? %>
-          <h5 class="show-catchcopy">キャッチコピー:<%= @post.catchcopy %></h5>
-        <% end %>
-        <% unless @post.url.blank? %>
-          <!-- <span style="text-decoration: underline" class="show-url"><%= link_to("サービスはこちらから","#{@post.url}") %></span><br> -->
-          <!-- <button type="button" class="btn btn-primary">
-            <a href="<%= @post.url %>">このサービスを使ってみる!</a>
-          </button><br> -->
-          <a href="<%= @post.url %>"><button type="button" class="btn btn-primary use-btn">このサービスを使ってみる</button></a><br>
-        <% end %>
-        <label class="show-about"><span style="text-decoration: underline">説明</span>:</label>
-        <div class="show-abouttext"><%= simple_format(@post.about) %></div><br>
-        <label class="show-strength"><span style="text-decoration: underline">こだわった点</span>:</label>
-        <div class="show-strengthtext"><%= simple_format(@post.strength) %></div>
-        <label class="show-strength"><span style="text-decoration: underline">完成までのストーリーや開発手段</span>:</label>
+
+        <label class="show-about"><span class="line-explanation">説明</span></label>
+        <div class="show-abouttext"><%= simple_format(@post.about) %><hr style="border-color: #00CCCC"></div>
+        <label class="show-strength"><span class="line-explanation">こだわった点</span></label>
+        <div class="show-strengthtext"><%= simple_format(@post.strength) %><hr style="border-color: #00CCCC"></div>
+        <label class="show-strength"><span class="line-explanation">完成までのストーリー</span></label>
         <div class="show-strengthtext"><%= simple_format(@post.stroy) %></div>
         <!-- <% if @post.img_name %>
           <div class="text-center">
