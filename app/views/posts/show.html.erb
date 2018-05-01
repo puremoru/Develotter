@@ -6,7 +6,9 @@
         <h5 class="text-center"><span style="color: "#C0C0C0""class="show-theme"><%= @post.catchcopy unless @post.catchcopy.blank? %></span></h5>
         <div class="text-center">
           <% if @post.img_url %>
-            <img class="eyecatch-img-show" src="<%= @post.img_url if @post.img_url %>">
+            <% if File.extname(@post.img_url) =~ /.*\.png/i || File.extname(@post.img_url) =~ /.*\.jpg/i  || File.extname(@post.img_url) =~ /.*\.jpeg/i%>
+              <img class="eyecatch-img-show" src="<%= @post.img_url if @post.img_url %>">
+            <% end %>
           <% end %>
         </div>
         <div class="text-center">
